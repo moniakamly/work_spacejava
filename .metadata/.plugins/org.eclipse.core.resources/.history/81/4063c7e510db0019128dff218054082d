@@ -1,0 +1,18 @@
+
+package tp1;
+
+import java.util.Scanner;
+
+public class TP1 {
+
+	public static void main(String[] args) {
+		int a,b, somme;
+		a=15; b=3;
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Entrer les valeurs de a et b");
+		
+		somme = a +b;
+		System.out.println("la somme de " + a + " et " + b + " est " +somme);
+	}
+
+}

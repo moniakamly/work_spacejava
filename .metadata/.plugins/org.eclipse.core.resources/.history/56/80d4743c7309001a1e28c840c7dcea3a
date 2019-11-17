@@ -1,0 +1,25 @@
+package fractions;
+
+public class Fraction {
+
+	public Fraction() {
+	}
+	
+	public Fraction(int n) {
+		
+	}
+	
+	public Fraction(int n) {
+		
+	}
+
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+	}
+
+}

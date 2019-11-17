@@ -1,0 +1,21 @@
+package ClassesandObjects;
+
+public class App {
+	
+	public static void main(String[] args) {
+		
+		Book myFirstBook = new Book("The Davinci Code" , "Dan Brown" , 354, "Thriller");
+		Book mySecondBook = new Book("The book thief" , "Marcus Zusac", 236, "Fiction");
+		Book myThirdBook = new Book ("Harry Potter", "J F Rowling", 680, "Science Fiction")
+		
+		
+		System.out.println(myFirstBook.genre);
+		System.out.println(mySecondBook.genre);
+		System.out.println(myThrdBook.title);
+
+		 
+	}
+	
+		
+	
+}

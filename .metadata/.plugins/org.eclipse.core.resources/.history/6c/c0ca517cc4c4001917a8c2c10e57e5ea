@@ -1,0 +1,18 @@
+package projet1;
+
+import java.util.Scanner;
+
+public class Monia {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Veuillez saisir votre nom");
+		String str1 = sc.nextLine();
+		System.out.println("Veuillez saisir votre age");
+		String str2 = sc.nextLine();
+		System.out.println ("Je suis " + str1 + " et j'ai " + str2 + " ans");
+
+	}
+
+}

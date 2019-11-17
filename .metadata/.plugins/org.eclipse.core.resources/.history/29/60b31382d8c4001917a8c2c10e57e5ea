@@ -1,0 +1,14 @@
+package projet1;
+
+public class Ville {
+	String nomVille;
+	String nomPays;
+	int nbrHabitants;
+	
+	
+public Ville ( ) {
+	nomVille = "Gafsa";
+	nomPays = "Tunisie";
+	nbrHabitants = 250000; 
+}
+}

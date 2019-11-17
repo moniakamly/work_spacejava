@@ -1,0 +1,22 @@
+package projet1;
+
+import java.util.Scanner;
+
+public class Conversion {
+	public static void main(String[] args) {
+		
+		int x;
+		String Celcius, Fehrenheit;
+		char reponse = 'C';
+		Scanner sc = new Scanner (System.in);
+		while (reponse == 'C') {
+			System.out.println("Veuillez saisir un nombre pour convertir");
+			x = sc.nextInt();
+			System.out.println("Veuillez choisir un mode de conversion\n 1- Celcuis vers ferhe\n 2- Ferh vers Celcius");
+			x = sc.nextInt();
+
+		}
+		
+
+	}
+}

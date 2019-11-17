@@ -1,0 +1,29 @@
+package tp4;
+
+public class TP4 {
+
+	public static int[] nouveauTab(int taille, int vMin, int vMax) {
+		int[] tab = new int[taille];
+		int lg = vMax - vMin + 1;
+		for (int i = 0; i < taille; i++) {
+			tab[i] = (int) (Math.random() * lg + vMin);
+		}
+		return tab;
+	}
+	
+	public static String tabEnChaine(int[] t) {
+		//t a au moins un element
+		String res = "[" + t[0];
+		for (int i=1; i< t.length; i++) {
+			res += ", " + t[i];
+		}
+		return res + "]";
+	}
+
+	public static void main(String[] args) {
+		int []  tab = nouveauTab(10,-10,22);
+		System.out.println(tabEnChaine(tab));
+
+	}
+
+}

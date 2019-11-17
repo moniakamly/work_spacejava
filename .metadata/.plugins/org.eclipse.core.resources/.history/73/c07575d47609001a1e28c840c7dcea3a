@@ -1,0 +1,42 @@
+package fractions;
+
+public class Fraction {
+	
+	private int n; // le numérateur
+	private int d; // le dénominateur
+	private int fraction; 
+	
+	
+	/*
+	 * Les constructeurs 
+	 */
+
+	public Fraction() {
+		fraction = 0/1;
+	}
+	
+	public Fraction(int n) {
+		fraction = n/1; 
+	}
+	
+	public Fraction(int n, int d) {
+		this.n=n; 
+		this.d=d; 
+		fraction = n/d; 
+	}
+	
+	public Fraction(String s) {
+		
+	}
+	
+
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+	}
+
+}

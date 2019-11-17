@@ -1,0 +1,24 @@
+package tp4;
+
+public class TP4 {
+
+	public static void main(String[] args) {
+		int taille=10;
+		int[] tab = new int[taille];
+		tab= nouveauTab(taille, 1, 5);
+		System.out.println(tab);
+		
+	}
+	
+	public static int[] nouveauTab (int taille, int vMin, int vMax) {
+		int[] t = new int[taille];
+		for (int i =0; i< taille; i++) {
+			t[i]=(int) Math.random() * (vMax-vMin);
+		}
+		
+		return t;
+		
+		
+	}
+
+}

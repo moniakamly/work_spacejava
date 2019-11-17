@@ -1,0 +1,23 @@
+package Day1exercices;
+
+import java.util.Scanner;
+
+
+public class Bienvenue {
+	
+	public static void main (String[] args) {
+		Scanner nom= new Scanner (System.in);
+		System.out.println ("Veuillez saisir votre Nom");
+		String nm=nom.nextLine();
+		System.out.println("Bienvenue" + nom);
+	}
+	
+	public String hello() {
+		return "hello";
+	}
+	
+	public int somme(int x, int y) {
+		return x+y;
+	}
+}
+

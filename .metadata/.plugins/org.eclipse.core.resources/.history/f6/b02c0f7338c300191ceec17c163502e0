@@ -1,0 +1,21 @@
+package ClassesandObjects;
+
+public class App {
+	
+	public static void main(String[] args) {
+		Book myFirstBook = new Book();
+		myFirstBook.bookTitle = "The Davinci Code";
+		myFirstBook.author = "Dan Brown";
+		myFirstBook.numberOfPages = 354;
+		myFirstBook.genre= "Thriller";
+		
+		
+		System.out.println(mySecondBook.bookTitle);
+
+		 
+		mySecondBook.bookTitle = ("The Book Thief"); 
+	}
+	
+		
+	
+}

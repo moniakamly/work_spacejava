@@ -1,0 +1,11 @@
+package ClassesandObjects;
+
+public class Book {
+	
+	String bookTitle;
+	String author;
+	int numberOfPages;
+	String editor;
+	String genre;
+
+}

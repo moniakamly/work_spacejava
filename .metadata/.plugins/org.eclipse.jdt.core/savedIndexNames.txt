@@ -1,0 +1,16 @@
+INDEX VERSION 1.131+C:\Users\monia\eclipse-workspace\.metadata\.plugins\org.eclipse.jdt.core
+1344618635.index
+656568349.index
+846854931.index
+3190497703.index
+2093458337.index
+2123777577.index
+542094340.index
+3938223735.index
+3871156402.index
+3802347010.index
+3460420904.index
+197169975.index
+897651487.index
+3108431294.index
+50131502.index

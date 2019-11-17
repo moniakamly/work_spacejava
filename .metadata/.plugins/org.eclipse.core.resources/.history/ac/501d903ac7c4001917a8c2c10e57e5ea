@@ -1,0 +1,23 @@
+package projet1;
+
+import java.util.Scanner;
+
+public class Monia {
+
+	public static void main(String[] args) {
+		
+		String prenom;
+		char reponse = 'O';
+		Scanner sc = new Scanner(System.in);
+		
+		while (reponse == 'O') {
+
+			System.out.println("Veuillez saisir votre nom");
+			prenom =sc.nextLine();
+			System.out.prinln( "bonjour " + prenom);
+		}
+		
+
+	}
+
+}

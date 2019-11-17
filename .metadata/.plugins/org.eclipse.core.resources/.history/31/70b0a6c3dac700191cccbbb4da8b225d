@@ -1,0 +1,15 @@
+package projet1;
+
+public class Monia {
+
+	public static void main(String[] args) {
+		
+		Ville v1= new Ville("Gafsa", "Tunisie", 150000);
+		Ville v2= new Ville ("Manilla", "Philippines", 3000000);
+		
+		System.out.println(v1.getNomPays);
+		System.out.println(v2.nbrHabitants);
+		
+	}
+	}
+

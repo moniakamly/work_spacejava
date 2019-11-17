@@ -1,0 +1,87 @@
+package tp4;
+
+public class TP4 {
+
+	public static int[] nouveauTab(int taille, int vMin, int vMax) {
+		int[] tab = new int[taille];
+		int lg = vMax - vMin + 1;
+		for (int i = 0; i < taille; i++) {
+			tab[i] = (int) (Math.random() * lg + vMin);
+		}
+		return tab;
+	}
+
+	public static String tabEnChaine(int[] t) {
+		if (t.length == 0)
+			return "[]";
+		String res = "[" + t[0];
+		for (int i = 1; i < t.length; i++) {
+			res += ", " + t[i];
+		}
+		return res + "]";
+	}
+
+	public static void changerValeurs(int[] t, int val) {
+		for (int i = 0; i < t.length; i++) {
+			t[i] = val;
+		}
+	}
+
+	public static void incrValeurs(int[] t) {
+		for (int i = 0; i < t.length; i++) {
+			t[i]++;
+		}
+	}
+
+	public static int sommeValeurs(int[] t) {
+		int somme = 0;
+		for (int i = 0; i < t.length; i++) {
+			somme += t[i];
+		}
+
+		return somme;
+	}
+
+	public static double ratioPairs(int[] t) {
+		double pourcentagePairs = 0;
+		for (int i = 0; i < t.length; i++) {
+			if ((t[i] % 2) == 0) {
+				pourcentagePairs++;
+			}
+		}
+		pourcentagePairs = (pourcentagePairs / t.length ) * 100;
+		return pourcentagePairs;
+	}
+	
+	
+	public static int maxValue (int[] tab) {
+		int max = tab[0];
+		for (int i=0; i<tab.length; i++) {
+			if (tab[i] > max)
+			max=tab[i];
+		}
+		
+		return max;
+	}
+	
+	
+	public static boolean appartient (int val, int [] tab) {
+		
+		
+		return 
+	}
+
+	public static void main(String[] args) {
+
+		int[] tab = nouveauTab(10, -10, 22);
+		System.out.println(tabEnChaine(tab));
+		//changerValeurs(tab, 5);
+		//System.out.println(tabEnChaine(tab));
+		//incrValeurs(tab);
+		//System.out.println(tabEnChaine(tab));
+		//System.out.println(sommeValeurs(tab));
+		System.out.println(ratioPairs(tab));
+		System.out.println(maxValue(tab));
+	}
+
+}

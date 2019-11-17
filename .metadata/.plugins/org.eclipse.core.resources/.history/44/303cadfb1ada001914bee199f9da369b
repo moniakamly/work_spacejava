@@ -1,0 +1,18 @@
+package TD2;
+
+public class Ex2_operateurMOD {
+	public static void main(String[] args) {
+		int x,y,i, result;
+		x=100; y=3; i=1;
+		result=x-y;
+		
+		while (result>=y) {
+			result= result -y;
+			i=i+1;			
+		}
+		
+		System.out.println ("Le résultat de l'opération de division est " + i);
+		System.out.println ("Le reste de l'opération de division est " + result);
+	}
+
+}   

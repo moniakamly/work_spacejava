@@ -1,0 +1,29 @@
+package Day1exercices;
+
+public class Somme {
+	    
+	    public void somme() {
+	         System.out.println("Let's try addition! ");
+	        int x = 1;
+	        int y = 2;
+	        int z = x + y;
+	       
+	        System.out.println("The sum is "+z);
+	        System.out.println("Let's try addition! ");
+	        int i = 3;
+	        int j = 4;
+	        int  k= i + j;
+	       
+	        System.out.println("The sum is "+k);
+	        System.out.println("Let's try addition! ");
+	        int var1 = 5;
+	        int var2 = 6;
+	        int  var3= var1 + var2;
+	         System.out.println("The sum is "+var3);
+	        
+	    }
+	    
+	    
+	
+
+}

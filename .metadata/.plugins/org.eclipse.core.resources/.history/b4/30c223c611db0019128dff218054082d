@@ -1,0 +1,21 @@
+
+package tp1;
+
+import java.util.Scanner;
+
+public class TP1 {
+
+	public static void main(String[] args) {
+		int  somme;
+		
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Entrer a et b");
+		
+		int premierEntier = sc.nextInt();
+		int secondEntier = sc.nextInt();
+
+		somme = premierEntier + secondEntier;
+		System.out.println("la somme de " + premierEntier + " et " + secondEntier + " est " +somme);
+	}
+
+}

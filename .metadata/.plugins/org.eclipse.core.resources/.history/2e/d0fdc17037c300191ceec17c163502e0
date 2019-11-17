@@ -1,0 +1,17 @@
+package ClassesandObjects;
+
+public class App {
+	
+	public static void main(String[] args) {
+		Book mybook = new Book();
+		mybook.bookTitle = "The Davinci Code";
+		mybook.author = "Dan Brown";
+		mybook.numberOfPages = 354;
+		mybook.genre= "Thriller";
+		
+		
+		System.out.println(mybook.bookTitle);
+
+	}
+	
+}

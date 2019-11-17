@@ -1,0 +1,25 @@
+package Day1exercices;
+
+public class ExerciceA {
+
+	/*public static void main (String[] args) {
+		
+		double salary = 23580.350;
+		double tax = 0.0;
+		
+		 if (salary <= 15000) {
+			 tax= salary * 0.10;
+		 }
+		 else if (salary <= 40000) {
+			 tax = salary * 0.2;
+		 }
+		 else {
+			 tax = salary * 0.3;
+		 }
+		 System.out.println ("Tax is equal to " + tax);
+	}*/
+	
+	public static  int somme(int x, int y) {
+		return x+y;
+	}
+}

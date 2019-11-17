@@ -1,0 +1,17 @@
+package fractions;
+
+public class Fraction {
+
+	public Fraction() {
+	}
+
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package tp4;
+
+
+public class TP4 {
+	
+	public static int[] nouveauTab(int taille, int vMin, int vMax) {
+		
+		return null;
+	}
+
+	public static void main(String[] args) {
+		
+
+	}
+
+	
+
+
+}

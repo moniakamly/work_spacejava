@@ -1,0 +1,93 @@
+package mesStrings;
+
+public class MaStringBuffer {
+
+	private char[] lesCaracteres;
+	private int n; //nombre de caracteres effectifs
+	
+	/**
+	 * Les constructeurs
+	 */
+
+	public MaStringBuffer(int l) {
+		lesCaracteres = new char [l];
+		n = 0; //null pour les références
+	}
+	
+	public MaStringBuffer () {
+		this(16);
+		//lesCaracteres = new char[16];
+	}
+	
+	public MaStringBuffer(MaString ms) {
+		int lg = ms.length(); 
+		lesCaracteres = new char [lg + 16];
+		for (int i =0; i < lg; i++) 
+			lesCaracteres[i] = ms.charAt(i);
+		n = lg;
+	}
+	
+	public String toString() {
+		return new String(lesCaracteres, 0, n);
+	}
+	
+	/**
+	 * Les méthodes
+	 * @param args
+	 */
+	
+	public int length() {
+		return (n);
+		//return this.length() (faux c'est de la récurcivité infinie)
+	}
+	
+	public int capacity() {
+		return (lesCaracteres.length); //le tampon c'est la taille de this
+	}
+	
+	public void ensureCapacity(int capMin) {
+		//si on a pas la capacité il faut louer de l'entrepot
+		if (lesCaracteres.length > capMin) {
+			capMin = lesCaracteres.length; 
+		}
+	}
+	
+	public MaStringBuffer append(MaString ms) {
+		char [] tab = new char [ lesCaracteres.length + ms.length()];
+		
+		for (int i=0; i< n; i++) {
+			tab[i] = lesCaracteres[i];
+			//System.out.println(tab);
+		}
+		
+		System.out.println(tab);
+		System.out.println(ms);
+		return new MaStringBuffer (ms.concat());
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		MaStringBuffer sb = new MaStringBuffer();
+		MaStringBuffer sb1 = new MaStringBuffer(MaString.valueOf(true));
+		MaString ms = new MaString(new char[] { 'f', 'a', 'l', 's', 'e' }, 0, 5);
+		//System.out.println("<" + sb + ">");
+		//System.out.println(sb.lesCaracteres.length);
+		//System.out.println(sb1);
+		//System.out.println(sb1.length());
+		//System.out.println(sb1.capacity());
+		System.out.println(sb1.append(ms));
+
+	}
+
+}

@@ -1,0 +1,46 @@
+package Day1exercices;
+
+import java.util.List;
+import java.util.Scanner;
+
+
+public class Bienvenue extends ExerciceA {
+	
+	
+	
+	public static void main (String[] args) {
+		/*Scanner nom= new Scanner (System.in);
+		System.out.println ("Veuillez saisir votre Nom");
+		String nm=nom.nextLine();
+		System.out.println("Bienvenue " + nm);
+		*/
+		ExerciceA ex = new ExerciceA();
+		
+		System.out.println(ex.Ex(5, 7));
+		Bienvenue b=new Bienvenue();
+	   b.test();
+	    Somme s1=new Somme();
+	    s1.somme();
+	    
+	    int[] li= {1,2,3,5};
+	    
+	    
+	    
+	    for(int valeur : li) {
+	    	System.out.println(valeur);
+	    }
+	    
+	    
+	    int numberOfCups = 0;
+	    do {
+	        System.out.println("I'm feeling sleepy");
+	        numberOfCups += 1;
+	        System.out.println("I drunk " + numberOfCups + " cups of coffee");
+	        } while (numberOfCups < 10);
+	    System.out.println("I'm feeling awake now!");
+	}
+	 public void test() {
+		 System.out.println("test test");
+	 }
+}
+

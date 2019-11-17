@@ -1,0 +1,75 @@
+
+package tp3;
+
+import java.util.Scanner;
+
+public class TP3 {
+
+	public static void main(String[] args) {
+		// exercice1();
+		// exercice2();
+		// exercice3();
+		//exercice4();
+		exercice5();
+
+	}
+
+	public static void exercice1() {
+		String mot, motInverse = "";
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrer un mot");
+		mot = sc.next();
+		for (int j = mot.length() - 1; j >= 0; j--) {
+			motInverse = motInverse + mot.charAt(j);
+		}
+		System.out.println(motInverse);
+		sc.close();
+	}
+
+	public static void exercice2() {
+		String mot;
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrer une chaine de caractères contenant un nombre entier en notation binaire");
+		mot = sc.next();
+
+	}
+
+	public static void exercice3() {
+		String mot, motMajuscule;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrer une chaine de caractères");
+		mot = sc.next();
+		motMajuscule = mot.toUpperCase();
+		System.out.println(motMajuscule);
+		sc.close();
+	}
+
+	public static void exercice4() {
+		String mot, result = "", motMajuscule = "";
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrer une chaine de caractères");
+		mot = sc.next();
+
+		for (int i = 0; i < mot.length(); i += 2) {
+			result = result + mot.toUpperCase().charAt(i);
+			if (i + 1 < mot.length()) {
+				result = result + mot.toLowerCase().charAt(i + 1);
+			}
+		}
+		System.out.println(result);
+
+		sc.close();
+	}
+	
+	public static void exercice5() {
+		char car;
+		String mot;
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Entrer un caractère");
+		car = sc.next().charAt(0);
+		System.out.println("Entrer une chaine de caractère");
+		mot = sc.next();
+	}
+}

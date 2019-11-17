@@ -1,0 +1,13 @@
+package tp1;
+
+public class TP1 {
+
+	public static void main(String[] args) {
+		int a,b, somme;
+		
+		a=5; b=3;
+		somme = a +b;
+		System.out.println(somme);
+	}
+
+}

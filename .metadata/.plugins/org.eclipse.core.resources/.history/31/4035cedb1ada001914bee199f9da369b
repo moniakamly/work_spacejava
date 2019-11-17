@@ -1,0 +1,17 @@
+package TD2;
+
+public class Ex2_operateur_multiplication {
+	public static void main(String[] args) {
+
+		int x,y,i,result;
+		x=5; y=25; result=0;
+		for  (i=1; i<=y; i++) {
+			result= result + x;
+		}
+	
+		
+		System.out.println ("Le resultat de multiplication est " + result);
+}
+}
+
+ 

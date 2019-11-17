@@ -1,0 +1,34 @@
+package projet1;
+
+public class Ville {
+	
+	//**************Getters****************
+	//retourne le nom de la ville 
+	/*public String getNom()  {
+		return nomVille;
+	}
+	
+	//retourne nom du Pays
+	public String getNomPays( ) {
+		return nomPays;
+	}
+	
+	
+	//*************Setters******************
+	public void setNom (String pNomVille ) {
+		nomVille= pNomVille;	
+	}
+	
+	private String nomVille;
+	private String nomPays;
+	private int nbrHabitants;
+	*/
+
+	// Constructeur d'une ville par défaut
+public Ville( String nomVille, String nomPays, int nbrHabitants) {
+	this.nomVille = nomVille;
+	this.nomPays = nomPays;
+	this.nbrHabitants = nbrHabitants;
+}
+
+}

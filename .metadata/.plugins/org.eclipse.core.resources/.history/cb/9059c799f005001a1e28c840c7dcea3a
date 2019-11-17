@@ -1,0 +1,122 @@
+package mesStrings;
+
+public class MaStringBuffer {
+
+	private char[] lesCaracteres;
+	private int n; // nombre de caracteres effectifs
+
+	/**
+	 * Les constructeurs
+	 */
+
+	public MaStringBuffer(int l) {
+		lesCaracteres = new char[l];
+		n = 0; // null pour les références
+	}
+
+	public MaStringBuffer() {
+		this(16);
+		// lesCaracteres = new char[16];
+	}
+
+	public MaStringBuffer(MaString ms) {
+		int lg = ms.length();
+		lesCaracteres = new char[lg + 16];
+		for (int i = 0; i < lg; i++)
+			lesCaracteres[i] = ms.charAt(i);
+		n = lg;
+	}
+
+	public String toString() {
+		return new String(lesCaracteres, 0, n);
+	}
+
+	/**
+	 * Les méthodes
+	 * 
+	 * @param args
+	 */
+
+	public int length() {
+		return (this.n);
+		// return this.length() (faux c'est de la récurcivité infinie)
+	}
+
+	public int capacity() {
+		return (lesCaracteres.length); // le tampon c'est la taille de this
+	}
+
+	public void ensureCapacity(int capMin) {
+		// on s'assure que les caraccteres ont au moins une taille capMin 
+		/**
+		 * if (this.capacity() < capMin) {
+		 
+			this.lesCaracteres = new char[(this.capacity())];*/
+		if (capMin <= lesCaracteres.length)
+			return; 
+		char [] tab = new char [capMin + 16];
+		for (int i=0; i < n; i++) {
+			tab[i] = lesCaracteres[i]; 
+			lesCaracteres = tab; 
+		}
+	}
+
+	public MaStringBuffer append(MaString ms) {
+		
+		ensureCapacity(n + ms.length()); 
+		for (int i = 0; i < ms.length(); i++) {
+			lesCaracteres[i + n] = ms.charAt(i);
+		n += ms.length(); 	
+		}
+		return this;
+	}
+
+	public MaStringBuffer replace(int d, int f, MaString ms) {
+		
+		
+		
+		return this; 
+	}
+		/**char[] tab = new char[lesCaracteres.length + ms.length()];
+		for (int i = 0; i < d; i++)
+			tab[i] = lesCaracteres[i];
+
+		for (int i = d; i <= ms.length(); i++)
+			tab[i] = ms.charAt(i - d);
+
+			int i = 0; 
+		for (int k = f; k < lesCaracteres.length; k++) {
+			tab[k] = lesCaracteres[i]; 
+			i++; 
+			 System.out.println(tab);
+		}
+
+		System.out.println(tab);
+		return new MaStringBuffer(ms);
+	}*/
+	
+	public MaStringBuffer delete (int d , int f ) {
+		return replace (d, f , new MaString()); 
+	}
+	
+	
+	/// Dans insert on enlève rien 
+	
+	public StringBuffer insert (int i, MaString ms) {
+		return replace(i,i,ms); 
+	}
+
+	public static void main(String[] args) {
+		MaStringBuffer sb = new MaStringBuffer();
+		MaStringBuffer sb1 = new MaStringBuffer(MaString.valueOf(true));
+		MaString ms = new MaString(new char[] { 'f', 'a', 'l', 's', 'e' }, 0, 5);
+		// System.out.println("<" + sb + ">");
+		// System.out.println(sb.lesCaracteres.length);
+		// System.out.println(sb1);
+		// System.out.println(sb1.length());
+		// System.out.println(sb1.capacity());
+		//System.out.println(sb1.append(ms));
+		// System.out.println(sb1.replace(1, 3, ms));
+	}
+
+}

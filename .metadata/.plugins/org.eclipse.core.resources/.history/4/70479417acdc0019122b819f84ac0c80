@@ -1,0 +1,169 @@
+
+package tp1;
+
+import java.util.Scanner;
+
+public class TP1 {
+
+	public static void main(String[] args) {
+		// exercice1();
+		// exercice2();
+		// exercice3();
+		// exercice4();
+		exercice5();
+	}
+
+	////// Calcul de la somme de deux entiers //////////////
+
+	public static void exercice1() {
+		int somme, premierEntier, secondEntier;
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrer le premier entier");
+		premierEntier = sc.nextInt();
+		System.out.println("Entrer le second entier");
+		secondEntier = sc.nextInt();
+
+		somme = premierEntier + secondEntier;
+		System.out.println("la somme de " + premierEntier + " et " + secondEntier + " est " + somme);
+	}
+
+	///// Calcul d'un montant en euros dans une devise étrangère //////////
+	public static void exercice2() {
+		double x, taux;
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrer le montant en euros");
+		x = sc.nextDouble();
+		System.out.println("Entrer le taux de change");
+		taux = sc.nextDouble();
+		double montant = x * taux;
+		System.out.println("Le montant converti est " + montant);
+
+	}
+
+	////// Calcul de la moyenne des 2 plus grands parmi 3 réels //////
+	public static void exercice3() {
+		double a, b, c, moyenne = 0;
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrer le premier réel");
+		a = sc.nextDouble();
+		System.out.println("Entrer le deuxième réel");
+		b = sc.nextDouble();
+		System.out.println("Entrer le troisième réel");
+		c = sc.nextDouble();
+
+		if ((a <= b) && (a <= c)) {
+			moyenne = (b + c) / 2;
+		} else if ((b <= a) && (b <= c)) {
+			moyenne = (a + c) / 2;
+		} else if ((c <= a) && (c <= b)) {
+			moyenne = (a + b) / 2;
+		}
+		System.out.println("La moyenne des 2 plus grandes = " + moyenne);
+	}
+
+	///// Afficher l'heure à la seconde suivante ////////
+	public static void exercice4() {
+		int heure, minute, seconde;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrer l'heure");
+		heure = sc.nextInt();
+		System.out.println("Entrer les minutes");
+		minute = sc.nextInt();
+		System.out.println("Entrer les secondes");
+		seconde = sc.nextInt();
+
+		if ((seconde < 59) && (minute < 59) && (heure < 23)) {
+			seconde = seconde + 1;
+		}
+
+		else if ((seconde == 59) && (minute < 59) && (heure < 23)) {
+			seconde = 0;
+			minute = minute + 1;
+		} else if ((seconde == 59) && (minute == 59) && (heure < 23)) {
+			seconde = 0;
+			minute = 0;
+			heure = heure + 1;
+		} else if ((seconde == 59) && (minute == 59) && (heure == 23)) {
+			seconde = 0;
+			minute = 0;
+			heure = 0;
+		}
+		System.out.println("l'heure à la seconde suivante est " + heure + " heures, " + minute + " minutes, " + seconde
+				+ " secondes");
+	}
+
+	///////// Calcul la somme de deux durées "heure, minute, seconde" ///////// ////////////////
+	public static void exercice5() {
+		int h1 = 0, m1 = 0, s1 = 0, h2 = 0, m2 = 0, s2 = 0;
+		int heureFinale = 0, minuteFinale = 0, secondeFinale = 0, day = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrer la première heure,minute,seconde");
+		do {
+			System.out.println("h1 : ");
+		h1 = sc.nextInt();
+		}while(h1>24);
+		m1 = sc.nextInt();
+		s1 = sc.nextInt();
+		System.out.println("Entrer la deuxième heure,minute,seconde");
+		h2 = sc.nextInt();
+		m2 = sc.nextInt();
+		s2 = sc.nextInt();
+
+		secondeFinale = s1 + s2;
+		minuteFinale = m1 + m2;
+		heureFinale = h1 + h2;
+
+		if ((secondeFinale >= 60) && (minuteFinale < 60) && (heureFinale < 24)) {
+			secondeFinale -= 60;
+			minuteFinale++;
+
+		}
+
+		else if ((secondeFinale < 60) && (minuteFinale >= 60) && (heureFinale < 24)) {
+			minuteFinale -= 60;
+			heureFinale++;
+		}
+
+		else if ((secondeFinale >= 60) && (minuteFinale >= 60) && (heureFinale < 24)) {
+			secondeFinale -= 60;
+			minuteFinale = (minuteFinale + 1) - 60;
+			heureFinale++;
+		}
+
+		else if ((secondeFinale >= 60) && (minuteFinale >= 60) && (heureFinale >= 24)) {
+			secondeFinale = (secondeFinale) - 60;
+			minuteFinale = (minuteFinale + 1) - 60;
+			heureFinale = (heureFinale + 1) - 24;
+			day = (h1 + h2) / 24;
+		}
+
+		else if ((secondeFinale >= 60) && (minuteFinale < 60) && (heureFinale >= 24)) {
+			secondeFinale -= 60;
+			minuteFinale++;
+			heureFinale = heureFinale - 24;
+			day = (h1 + h2) / 24;
+		}
+
+		else if ((secondeFinale < 60) && (minuteFinale < 60) && (heureFinale >= 24)) {
+			heureFinale -= 24;
+			day = (h1 + h2) / 24;
+		}
+
+		else if ((secondeFinale < 60) && (minuteFinale >= 60) && (heureFinale >= 24)) {
+			minuteFinale -= 60;
+			heureFinale = (heureFinale + 1) - 24;
+			day = (h1 + h2) / 24;
+		}
+
+		System.out.println("L'heure finale est " + day + " Day " + heureFinale + " heures, " + minuteFinale
+				+ " minutes, " + secondeFinale + " secondes ");
+		sc.close();
+	}
+	
+	
+	//////// Calcul de la somme et la moyenne de 10 entiers ///
+	
+}

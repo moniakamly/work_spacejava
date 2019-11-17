@@ -1,0 +1,98 @@
+package mesStrings;
+
+public class MaString {
+	private char[] lescaracteres;
+
+	/**
+	 * Les constructeurss
+	 */
+
+	public MaString() {
+		lescaracteres = new char[0];
+	}
+
+	public MaString(char[] tab, int d, int f) {
+		lescaracteres = new char[f - d];
+		for (int i = d; i < f; i++)
+			lescaracteres[i - d] = tab[i];
+	}
+
+	public MaString(MaString ms) {
+		lescaracteres = ms.lescaracteres;
+	}
+
+	/**
+	 * Les méthodes
+	 *
+	 * @return
+	 */
+
+	public int length() {
+		return lescaracteres.length;
+	}
+
+	public boolean isEmpty() {
+		return lescaracteres.length == 0;
+	}
+
+	public char charAt(int i) {
+		return lescaracteres[i];
+	}
+
+	public MaString substring(int d, int f) {
+		return new MaString(lescaracteres, d, f);
+
+	}
+
+	public int compareTo(MaString ms) {
+		int lMin = lescaracteres.length < ms.lescaracteres.length ? lescaracteres.length : ms.lescaracteres.length;
+		for (int i = 0; i < lMin; i++) {
+			if (lescaracteres[i] == ms.lescaracteres[i])
+				return (lescaracteres[i] - ms.lescaracteres[i]);
+		}
+		return (lescaracteres.length - ms.lescaracteres.length);
+	}
+	
+	
+	public boolean equals (MaString ms) {
+		return (lescaracteres == ms.lescaracteres);
+	}
+	
+	public boolean startWith (MaString prefix, int toffset) {
+		char ta[] = value;  
+	     int to = toffset;  
+	     char pa[] = prefix.value;  
+	     int po = 0;  
+	     int pc = prefix.value.length;  
+	     // Note: toffset might be near -1>>>1.  
+	     if ((toffset < 0) || (toffset > value.length - pc)) {  
+	         return false;  
+	     }  
+	     while (--pc >= 0) {  
+	         if (ta[to++] != pa[po++]) {  
+	             return false;  
+	         }  
+	     }  
+	     return true;  
+	}
+	
+	
+	
+
+	public String toString() {
+		return new String(lescaracteres);
+	}
+
+	public static void main(String[] args) {
+		MaString ms = new MaString(new char[] { 't', 'y', 'o', 'm' }, 0, 3);
+		System.out.println(">" + ms + "<");
+		MaString ms2 = new MaString(ms);
+		System.out.println(">" + ms2 + "<");
+		MaString ms3 = new MaString(new char[] { 'm', 'o', 'n', 'n', 'i','a' }, 0, 5);
+		System.out.println(
+				"Longueurs :" + ms.charAt(2) + " pour ms," + ms3.compareTo(ms) + " pour ms2," + ms3.length() + " pour ms3,");
+		System.out.println(ms3.compareTo(ms));
+		System.out.println(ms3.equals(ms3));
+	}
+
+}

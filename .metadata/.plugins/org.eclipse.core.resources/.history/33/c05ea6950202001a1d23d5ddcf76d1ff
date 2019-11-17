@@ -1,0 +1,54 @@
+package mesStrings;
+
+public class MaStringBuffer {
+
+	private char[] lesCaracteres;
+	private int n; // nombre de caracteres effectifs
+
+	public String toString() {
+		return new String(lesCaracteres, 0, n);
+	}
+	
+	
+	/**
+	 * Les constructeurs
+	 */
+
+	public MaStringBuffer(int l) {
+		lesCaracteres = new char [l];
+		n = 0; //null pour les références
+	}
+	
+	public MaStringBuffer () {
+		this(16);
+		//lesCaracteres = new char[16];
+	}
+	
+	public MaStringBuffer(MaString ms) {
+		int lg = ms.length(); 
+		lesCaracteres = new char [lg + 16];
+		for (int i =0; i < lg; i++) 
+			lesCaracteres[i] = ms.charAt(i);
+		n = lg;
+	}
+	
+	
+	/**
+	 * Les méthodes
+	 * @param args
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		MaStringBuffer ms = new MaStringBuffer(5);
+		System.out.println(ms);
+	}
+
+}

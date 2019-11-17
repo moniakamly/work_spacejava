@@ -1,0 +1,36 @@
+package projet1;
+
+import java.util.Scanner;
+
+public class Monia {
+
+	public static void main(String[] args) {
+		
+		Ville ville = new Ville("Gabes", "Tunisie", 253000);
+		System.out.println(ville.nomPays);
+		
+		/*String prenom;
+		char reponse = 'O';
+		Scanner sc = new Scanner(System.in);
+		
+		while (reponse == 'O') {
+
+			System.out.println("Veuillez saisir votre nom");
+			prenom =sc.nextLine();
+			System.out.println( "bonjour " + prenom);
+			reponse = ' ';
+            
+			  //Tant que la réponse n'est pas O ou N, on repose la question
+			while(reponse != 'O' && reponse != 'N')
+	 	  {
+			    //On demande si la personne veut faire un autre essai
+			    System.out.println("Voulez-vous réessayer ? (O/N)");
+			    reponse = sc.nextLine().charAt(0);
+			  }
+			}
+			System.out.println("Au revoir…" );
+		*/ }
+		
+
+	}
+
