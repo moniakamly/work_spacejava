@@ -130,28 +130,44 @@ public class Fraction {
 
 	public int compareTo(Fraction f) {
 		int resultat = 0;
-		if (this.d == f.d) {
+		if ((this.d == f.d) && (this.n != f.n)) {
 			if (this.n > f.n)
 				resultat = 1;
 			else
 				resultat = -1;
-		} else if (this.n == f.n) {
-			if (this.d < f.n)
+		} else if ((this.n == f.n) && (this.d != f.d)) {
+			if (this.d < f.d)
 				resultat = 1;
 			else
 				resultat = -1;
 		} else if (this.n != f.n) { // on les réduit au meme dénominateur
-
+			Fraction f1 = new Fraction();
+			f1.n = this.n * f.d;
+			f1.d = this.d * f.d;
+			Fraction f2 = new Fraction();
+			f2.n = f.n * this.d;
+			f2.d = f.d * this.d;
+			if (f1.n > f2.n)
+				resultat = 1;
+			else
+				resultat = -1;
 		}
+
 		return resultat;
 	}
 
+	/*
+	 * Méthode qui retourne true si et seulement si this est équivalent à obj
+	 */
+	
+
+
 	public static void main(String[] args) {
-		Fraction f = new Fraction();
+		Fraction f = new Fraction(12, 6);
 		// System.out.println(f.toString());
-		Fraction f1 = new Fraction(12, 6);
-		System.out.println(f.plus(f1).reduire(f1));
-		//System.out.println(f.reduire(f));
+		Fraction f1 = new Fraction(3, 6);
+		System.out.println(f.plus(f1).reduire(f.plus(f1)));
+		System.out.println(f.compareTo(f1));
 
 	}
 
