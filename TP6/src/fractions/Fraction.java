@@ -63,14 +63,27 @@ public class Fraction {
 	}
 
 	/*
+	 * Calcul du pgcd
+	 */
+
+	public int pgcd(int a, int b) {
+		int r = a % b;
+
+		if (r == 0)
+			return b;
+		else
+			return (pgcd(b, r));
+	}
+
+	/*
 	 * Méthode qui consiste à réduire la fraction
 	 */
 
 	public Fraction reduire(Fraction f) {
-		Arithmetique a = new Arithmetique();
+		// Arithmetique a = new Arithmetique();
 		Fraction fractionReduite = new Fraction();
-		fractionReduite.n = f.n / a.pgcd(f.n, f.d);
-		fractionReduite.d = f.d / a.pgcd(f.n, f.d);
+		fractionReduite.n = f.n / pgcd(f.n, f.d);
+		fractionReduite.d = f.d / pgcd(f.n, f.d);
 
 		return (fractionReduite);
 	}
@@ -104,7 +117,6 @@ public class Fraction {
 	 */
 
 	public Fraction fois(Fraction f) {
-		Arithmetique a = new Arithmetique();
 		Fraction fraction = new Fraction();
 		fraction.n = this.n * f.n;
 		fraction.d = this.d * f.d;
@@ -114,9 +126,9 @@ public class Fraction {
 	/*
 	 * Retourne le résultat de la division de this par f
 	 */
+
 	public Fraction diviserPar(Fraction f) {
-		Arithmetique a = new Arithmetique();
-		Fraction fraction = new Fraction();
+		Fraction fraction = new Fraction(n, d);
 		fraction.n = this.n * f.d;
 		fraction.d = this.d * f.n;
 		return fraction;
@@ -141,10 +153,10 @@ public class Fraction {
 			else
 				resultat = -1;
 		} else if (this.n != f.n) { // on les réduit au meme dénominateur
-			Fraction f1 = new Fraction();
+			Fraction f1 = new Fraction(n, d);
 			f1.n = this.n * f.d;
 			f1.d = this.d * f.d;
-			Fraction f2 = new Fraction();
+			Fraction f2 = new Fraction(n, d);
 			f2.n = f.n * this.d;
 			f2.d = f.d * this.d;
 			if (f1.n > f2.n)
@@ -157,17 +169,23 @@ public class Fraction {
 	}
 
 	/*
-	 * Méthode qui retourne true si et seulement si this est équivalent à obj
+	 * Méthode qui retourne true si et seulement si this est equivalent à obj
 	 */
+
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		return false;
+	}
 	
 
-
 	public static void main(String[] args) {
-		Fraction f = new Fraction(12, 6);
+		Fraction f = new Fraction(16, 4);
 		// System.out.println(f.toString());
-		Fraction f1 = new Fraction(3, 6);
-		System.out.println(f.plus(f1).reduire(f.plus(f1)));
-		System.out.println(f.compareTo(f1));
+		Fraction f1 = new Fraction(3, 5);
+		 System.out.println(f.plus(f1).reduire(f.plus(f1)));
+		// System.out.println(f.compareTo(f1));
+		System.out.println(f.fois(f1).reduire(f.fois(f1)));
 
 	}
 
